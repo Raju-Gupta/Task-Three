@@ -8,11 +8,20 @@
 
 import UIKit
 
+#if Dev
+    let color = UIColor.red
+    let text = "TargetDev"
+#else
+    let color = UIColor.blue
+    let text = "TargetProd"
+#endif
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.barTintColor = color
+        self.title = text
     }
 
 
